@@ -1,0 +1,49 @@
+# Project: Project1
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = main.o LeitorDigital.o Kindle.o Lev.o Plus.o Kobo.o Biblioteca.o Livro.o
+LINKOBJ  = main.o LeitorDigital.o Kindle.o Lev.o Plus.o Kobo.o Biblioteca.o Livro.o
+LIBS     = -L"C:/Program Files/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32" -static-libgcc -m32 -g3
+INCS     = -I"C:/Program Files/Dev-Cpp/MinGW64/include" -I"C:/Program Files/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files/Dev-Cpp/MinGW64/include" -I"C:/Program Files/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = Project1.exe
+CXXFLAGS = $(CXXINCS) -m32 -g3
+CFLAGS   = $(INCS) -m32 -g3
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+LeitorDigital.o: LeitorDigital.cpp
+	$(CPP) -c LeitorDigital.cpp -o LeitorDigital.o $(CXXFLAGS)
+
+Kindle.o: Kindle.cpp
+	$(CPP) -c Kindle.cpp -o Kindle.o $(CXXFLAGS)
+
+Lev.o: Lev.cpp
+	$(CPP) -c Lev.cpp -o Lev.o $(CXXFLAGS)
+
+Plus.o: Plus.cpp
+	$(CPP) -c Plus.cpp -o Plus.o $(CXXFLAGS)
+
+Kobo.o: Kobo.cpp
+	$(CPP) -c Kobo.cpp -o Kobo.o $(CXXFLAGS)
+
+Biblioteca.o: Biblioteca.cpp
+	$(CPP) -c Biblioteca.cpp -o Biblioteca.o $(CXXFLAGS)
+
+Livro.o: Livro.cpp
+	$(CPP) -c Livro.cpp -o Livro.o $(CXXFLAGS)
