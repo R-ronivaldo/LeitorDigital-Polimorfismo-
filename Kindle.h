@@ -1,6 +1,7 @@
 #ifndef KINDLE_H
 #define KINDLE_H
 #include "LeitorDigital.h"
+#include "Biblioteca.h"
 #include <iostream>
 #include <string>
 using std::string;
@@ -30,6 +31,9 @@ class Kindle : public LeitorDigital
 	private:
 		bool serv;
 		int valor;
+		
+		Biblioteca *lBiblio;
+		int quantBiblio;
 
 };
 

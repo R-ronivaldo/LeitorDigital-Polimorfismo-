@@ -18,7 +18,8 @@ int main(int argc, char** argv) {
 	Biblioteca biblio1("Saraiva");
 	Livro livro1("HarryPotter","JK","Fantasia",2017);	
 	biblio1.adicionarLivro(livro1);
-		
+
+	kindle.setServ(false);
 	kindle->print();
 	lev->print();
 	plus->print();

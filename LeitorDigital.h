@@ -1,5 +1,6 @@
 #ifndef LEITORDIGITAL_H
 #define LEITORDIGITAL_H
+#include "Biblioteca.h"
 #include <iostream>
 #include <string>
 using std::ostream;
@@ -29,6 +30,9 @@ class LeitorDigital
 		virtual void print() = 0;
 	protected:
 		string user;
+		
+		Biblioteca *lBiblio;
+		int quantBiblio;
 
 };
 

@@ -6,6 +6,7 @@ Kindle::Kindle(const string &user,bool serv, int valor)
 {
 	setServ(serv);
 	setValor(valor);
+	this->quantBiblio = 0;
 }
 
 Kindle::Kindle()
