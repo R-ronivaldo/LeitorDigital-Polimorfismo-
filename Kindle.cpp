@@ -35,6 +35,32 @@ void Kindle::setValor(int valor){
 	this->valor = valor;
 }
 
+bool Kindle::getServ(){
+	return this->serv;
+}
+
+int Kindle::getValor(){
+	return this->valor;
+}
+
+void Kindle::ligarServicos(){
+	if (this->serv == false){
+		this->serv = true;
+		cout << "Serviços ligados!" << endl;
+	} else {
+		cout << "Os serviços já estão ligados" << endl;
+	}
+}
+
+void Kindle::desligarServicos(){
+	if (this->serv == true){
+		this->serv = false;
+		cout << "Serviços desligados!" << endl;
+	} else {
+		cout << "Os serviços já estão desligados!" << endl;
+	}
+}
+
 const Kindle &Kindle::operator= (const Kindle &kindle){
 	//*static_cast< LeitorDigital * >( this ) = static_cast< LeitorDigital >( kindle );	
 	
@@ -43,6 +69,18 @@ const Kindle &Kindle::operator= (const Kindle &kindle){
 	this->valor = kindle.valor;
 	
 	return *this;
+}
+
+bool Kindle::operator==(const Kindle &kindle)const{
+	if (user != kindle.user || valor != kindle.valor || serv != kindle.serv) {
+		return false;
+	} else {
+		return true;
+	}
+}
+
+bool Kindle::operator!=(const Kindle &kindle)const{
+	return ! (*this == kindle);
 }
 
 ostream &operator<<( ostream &out, const Kindle &kindle){

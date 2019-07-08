@@ -36,12 +36,32 @@ void Lev::setEscrever(const string &esc){
 	}
 }
 
+bool Lev::getCaneta(){
+	return this->caneta;
+}
+
+string Lev::getEscrever(){
+	return this->escrever;
+}
+
 const Lev &Lev::operator= (const Lev &lev){
 	this->user = lev.user;
 	this->caneta = lev.caneta;
 	this->escrever = lev.escrever;
 	
 	return *this;
+}
+
+bool Lev::operator==(const Lev &lev)const{
+	if (user != lev.user || caneta != lev.caneta || escrever != lev.escrever) {
+		return false;
+	} else {
+		return true;
+	}
+}
+
+bool Lev::operator!=(const Lev &lev)const{
+	return ! (*this == lev);
 }
 
 ostream &operator<<( ostream &out, const Lev &lev){
@@ -53,13 +73,21 @@ ostream &operator<<( ostream &out, const Lev &lev){
 }
 
 void Lev::ligarServicos() {
-	this->caneta = true;
-	this->escrever = "Pronto para escrever!";
+	if (this->caneta == false){
+		this->caneta = true;
+		this->escrever = "Pronta para escrever!";
+	} else {
+		cout << "A caneta já está pronta!" << endl;
+	}
 }
 
 void Lev::desligarServicos(){
-	this->caneta = false;
-	this->escrever = "Servico desligado!";
+	if (this->caneta == true){
+		this->caneta = false;
+		this->escrever = "Servico desligado!";
+	} else {
+		cout << "A caneta já está desligada!" << endl;
+	}
 }
 		
 		

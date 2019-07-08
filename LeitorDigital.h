@@ -26,13 +26,10 @@ class LeitorDigital
 		
 		virtual void ligarServicos() = 0;
 		virtual void desligarServicos() = 0;
-		//virtual void resertarLD() = 0;
 		virtual void print() = 0;
+		
 	protected:
 		string user;
-		
-		Biblioteca *lBiblio;
-		int quantBiblio;
 
 };
 

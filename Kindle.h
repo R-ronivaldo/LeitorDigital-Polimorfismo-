@@ -21,11 +21,16 @@ class Kindle : public LeitorDigital
 		
 		void setServ(bool);
 		void setValor(int);
+		bool getServ();
+		int getValor();
+		
 		
 		const Kindle &operator= (const Kindle &);
+		bool operator==(const Kindle &)const;
+		bool operator!=(const Kindle &kindle)const;
 		
-		void ligarServicos() { this->serv = true; }
-		void desligarServicos() { this->serv = false; }
+		void ligarServicos();
+		void desligarServicos();
 		void print();
 
 	private:

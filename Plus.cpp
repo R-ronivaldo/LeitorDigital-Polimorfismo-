@@ -31,12 +31,30 @@ void Plus::setCapacidade(int capacidade){
 	this->capacidade = capacidade;
 }
 
+bool Plus::getNuvem(){
+	return this->nuvem;
+}
+
+int Plus::getCapacidade(){
+	return this->capacidade;
+}
+
 void Plus::ligarServicos(){
+	if (nuvem == false){
 	this->nuvem = true;
+	this->capacidade = 100;
+	} else {
+		cout << "Nuvem já está ativa!" << endl;
+	}
 }
 
 void Plus::desligarServicos(){
-	this->nuvem = false;
+	if (nuvem == true){
+		this->nuvem = false;
+		this->capacidade = 0;
+	} else {
+		cout << "Nuvem já está desabilitada!";
+	}
 }
 
 void Plus::print(){
@@ -62,4 +80,16 @@ const Plus &Plus::operator= (const Plus &pluss){
 	this->capacidade = pluss.capacidade;
 	
 	return *this;
+}
+
+bool Plus::operator==(const Plus &plus)const{
+	if (user != plus.user || nuvem != plus.nuvem || capacidade != plus.capacidade) {
+		return false;
+	} else {
+		return true;
+	}
+}
+
+bool Plus::operator!=(const Plus &plus)const{
+	return ! (*this == plus);
 }

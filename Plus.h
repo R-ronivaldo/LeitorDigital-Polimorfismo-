@@ -22,8 +22,12 @@ class Plus : public Kindle
 		
 		void setNuvem(bool);
 		void setCapacidade(int);
+		bool getNuvem();
+		int getCapacidade();
 		
 		const Plus &operator= (const Plus &);
+		bool operator==(const Plus &plus)const;
+		bool operator!=(const Plus &plus)const;
 		
 		void ligarServicos();
 		void desligarServicos();

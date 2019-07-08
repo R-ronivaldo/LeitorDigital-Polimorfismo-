@@ -19,12 +19,16 @@ class Lev : public LeitorDigital
 		
 		void setCaneta(bool);
 		void setEscrever(const string &);
+		bool getCaneta();
+		string getEscrever();
 		
 		void ligarServicos();
-		void desligarServicos();
-		const Lev &operator= (const Lev &);
-		
+		void desligarServicos();		
 		void print();
+		
+		const Lev &operator= (const Lev &);
+		bool operator==(const Lev &lev)const;
+		bool operator!=(const Lev &lev)const;
 		
 	private:
 		bool caneta;

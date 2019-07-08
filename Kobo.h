@@ -23,12 +23,16 @@ class Kobo : public LeitorDigital
 	
 	void setCompartilhar(bool);
 	void setUserShare(const string &);
+	bool setCompartilhar();
+	string getUserShare();
 	
 	void ligarServicos();
 	void desligarServicos();
 	void print();
 	
-	//const Kobo &operator= (const Kobo &);
+	const Kobo &operator= (const Kobo &);
+	bool operator==(const Kobo &kobo)const;
+	bool operator!=(const Kobo &kobo)const;
 	
 	private:
 	bool compartilhar;
